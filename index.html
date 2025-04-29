@@ -3,15 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic Tac Toe - Matrix Enhanced</title>
+    <title>Tic Tac Toe - Matrix with Ads</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Simple styling for ad containers */
+        .ad-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+            min-height: 50px; /* Ad height */
+            /* border: 1px dashed #ccc; /* Uncomment to visualize ad space */
+        }
+         .ad-container-top { margin-bottom: 20px; }
+         .ad-container-bottom { margin-top: 20px; }
+
+         /* Ensure content wrapper is above canvas but below potential ad overlays */
+         .content-wrapper { z-index: 1; }
+         #creator-info { z-index: 2; } /* Keep creator info visible */
+         .reset-button { margin-bottom: 15px; /* Add some space below reset button */}
+
+    </style>
 </head>
 <body>
     <!-- Matrix Background Canvas -->
     <canvas id="matrix-canvas"></canvas>
 
-    <div class="content-wrapper"> <!-- Wrapper to keep game content above canvas -->
+    <div class="content-wrapper">
+
+        <!-- ======================= TOP AD START ======================= -->
+        <!-- TROUBLESHOOTING: Ad Blocker OFF? Testing on http:// or https:// (NOT file:///)? Ad Unit ACTIVE in Adsterra? Check Browser Console/Network tab for errors. -->
+        <div class="ad-container ad-container-top">
+            <script type="text/javascript">
+                atOptions = { 'key' : '43e9970516f8732606df5cd22288d6de', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/43e9970516f8732606df5cd22288d6de/invoke.js"></script>
+        </div>
+        <!-- ======================== TOP AD END ======================== -->
+
         <h1>Tic Tac Toe</h1>
 
         <div class="difficulty-selector">
@@ -37,17 +68,30 @@
             <span id="trophy" style="display: none;">🏆</span>
         </div>
 
+        <!-- ***** RESET BUTTON MOVED HERE ***** -->
+        <!-- This button will now appear ABOVE the bottom ad when the game ends -->
         <button id="reset-button" class="reset-button" style="display: none;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rotate-cw"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
         </button>
+        <!-- ***** END OF RESET BUTTON ***** -->
 
-         <!-- Updated placement for Creator Info within the wrapper but positioned fixed -->
-         <div id="creator-info">
-            Created By:- Surya_Dabwal
+        <!-- ===================== BOTTOM AD START ===================== -->
+        <!-- TROUBLESHOOTING: Same checks apply as the top ad. -->
+        <div class="ad-container ad-container-bottom">
+             <script type="text/javascript">
+                atOptions = { 'key' : '43e9970516f8732606df5cd22288d6de', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/43e9970516f8732606df5cd22288d6de/invoke.js"></script>
         </div>
+        <!-- ====================== BOTTOM AD END ====================== -->
 
     </div> <!-- End Content Wrapper -->
 
+    <!-- Creator Info - Positioned at the bottom -->
+    <div id="creator-info">
+        Created By:- Surya_Dabwal
+    </div>
+
     <script src="script.js"></script>
 </body>
-</html>
+    </html>
